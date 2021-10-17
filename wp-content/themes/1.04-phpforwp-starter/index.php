@@ -14,42 +14,29 @@
 
   <div id="content">    
 
-    <?php
+    <?php    
 
-      // Create an array of post objects using the display_post function 
-
-      $post_titles = [
-          "This is the first post",
-          "This is the second post",
-          "This is the third post",
-          "This is the fourth post"
-        ];
+      function logic() {
+        $post_titles = [
+          "Title number 1",
+          "Title number 2",
+          "Title number 3",
+          "Title number 4",
+          "Another title"
+        ];  
+        
+        foreach($post_titles as $post_title) {
+         display_title($post_title);
+        }
+      }      
       
-      // Loop through array of posts and display each one on the page 
-      
-      foreach($post_titles as $post_title) {
-        display_titles($post_title);
+      function display_title($title) {
+        echo "<h3>$title</h3>";
       }
 
-        // Call the display_title function and pass it the $post
+      logic();
 
-      /**
-       * Custom function for displaying the title and content for a post
-       *
-       * @param string $title The title to be displayed
-       */
-
-      function display_titles( $title ) {
-        echo "<h3>$title</h3>";
-      }  
-      
-        // Echo an <h3> tag with the $title inside
-
-        // $title = "Title is here";            
-
-    ?>
-
-    
+    ?>    
 
   </div>
 
