@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PHP for WordPress</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+</head>
+<body>
+
+  <header id="masthead">
+    <h1><a href="#">PHP for WordPress</a></h1>
+  </header>
+
+  <div id="content">    
+
+    <?php
+
+      // Create an array of post objects using the display_post function 
+
+      $post_titles = [
+          "This is the first post",
+          "This is the second post",
+          "This is the third post",
+          "This is the fourth post"
+        ];
+      
+      // Loop through array of posts and display each one on the page 
+      
+      foreach($post_titles as $post_title) {
+        display_titles($post_title);
+      }
+
+        // Call the display_title function and pass it the $post
+
+      /**
+       * Custom function for displaying the title and content for a post
+       *
+       * @param string $title The title to be displayed
+       */
+
+      function display_titles( $title ) {
+        echo "<h3>$title</h3>";
+      }  
+      
+        // Echo an <h3> tag with the $title inside
+
+        // $title = "Title is here";            
+
+    ?>
+
+    
+
+  </div>
+
+</body>
+</html>
