@@ -14,27 +14,63 @@
 
   <div id="content">    
 
-    <?php    
-
-      function logic() {
-        $post_titles = [
-          "Title number 1",
-          "Title number 2",
-          "Title number 3",
-          "Title number 4",
-          "Another title"
-        ];  
-        
-        foreach($post_titles as $post_title) {
-         display_title($post_title);
-        }
-      }      
+    <?php 
+    
+      // Create an array of post titles
       
-      function display_title($title) {
-        echo "<h3>$title</h3>";
+      $post_titles = [
+        "First Title",
+        "Second Title",
+        "Third Title"
+      ];
+
+      // Loop through array of posts
+
+      foreach($post_titles as $post_title) {
+        // //-Here we can put the echo directly
+        // echo"<h3>$title</h3>";
+        //-But we are going to use a function instead
+        display_title( $post_title);
       }
 
-      logic();
+        // Call the display_post function and pass it the post title
+
+
+        /**
+         * Display the title for a post
+         * 
+         * @param string $title the title to be displayed
+         */
+        function display_title( $title ) {
+          //Echo an <h3> tag with the $title inside
+          //-Here we are going to add what we want to do inside the function
+          echo"<h3>$title</h3>";
+        }
+
+      // // -Here there is another example of how to use functions
+      // // -to get the same result
+      // // -First we create a function to iterate through the array
+      //   function logic() {
+      //   $post_titles = [
+      //     "Title number 1",
+      //     "Title number 2",
+      //     "Title number 3",
+      //     "Title number 4",
+      //     "Another title"
+      //   ];  
+        
+      //   foreach($post_titles as $post_title) {
+      //    display_title($post_title);
+      //   }
+      // }      
+      
+      // //-Then we create the disply function
+      // function display_title($title) {
+      //   echo "<h3>$title</h3>";
+      // }
+
+      // //-Finally we call the function
+      // logic();     
 
     ?>    
 
